@@ -28,7 +28,7 @@ jobs:
         env:
           REF: ${{ github.ref }}
         run: |
-          BRANCH=release/${REF:10}
+          BRANCH=${REF:10}/release
           git config --local user.email "ci@ignitionhost.ro"
           git config --local user.name "Ignition CI"
           git checkout -b $BRANCH
