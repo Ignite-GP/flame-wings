@@ -40,8 +40,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/wings_linux_amd64
-          asset_name: wings_linux_amd64
+          asset_path: build/flame_wings_linux_amd64
+          asset_name: flame_wings_linux_amd64
           asset_content_type: application/octet-stream
       - name: Upload arm64 Binary
         uses: actions/upload-release-asset@v1
@@ -49,8 +49,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/wings_linux_arm64
-          asset_name: wings_linux_arm64
+          asset_path: build/flame_wings_linux_arm64
+          asset_name: flame_wings_linux_arm64
           asset_content_type: application/octet-stream
       - name: Upload checksum
         uses: actions/upload-release-asset@v1
