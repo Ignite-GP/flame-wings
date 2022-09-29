@@ -24,19 +24,6 @@ jobs:
         run: |
           upx build/flame_wings_linux_amd64 && chmod +x build/flame_wings_linux_amd64
           upx build/flame_wings_linux_arm64 && chmod +x build/flame_wings_linux_arm64
-      - name: Create release branch
-        env:
-          REF: ${{ github.ref }}
-        run: |
-          BRANCH=${REF:10}/release
-          git config --local user.email "ci@ignitionhost.ro"
-          git config --local user.name "Ignition CI"
-          git checkout -b $BRANCH
-          git push -u origin $BRANCH
-          sed -i "s/var Version = \".*\"/var Version = \"${REF:11}\"/" system/const.go
-          git add system/const.go
-          git commit -m "bump version for release"
-          git push
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -45,7 +32,6 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: ${{ steps.extract_changelog.outputs.version_name }}
-          body_path: ./RELEASE_CHANGELOG
           draft: true
           prerelease: ${{ contains(github.ref, 'beta') || contains(github.ref, 'alpha') }}
       - name: Upload amd64 Binary
