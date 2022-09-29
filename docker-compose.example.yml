@@ -12,9 +12,9 @@ services:
     tty: true
     environment:
       TZ: "UTC"
-      WINGS_UID: 988
-      WINGS_GID: 988
-      WINGS_USERNAME: flame
+      flame_wings_UID: 988
+      flame_wings_GID: 988
+      flame_wings_USERNAME: flame
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "/var/lib/docker/containers/:/var/lib/docker/containers/"

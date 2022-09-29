@@ -416,9 +416,9 @@ func EnsureFlameUser() error {
 
 	// Our way of detecting if wings is running inside of Docker.
 	if sysName == "distroless" {
-		_config.System.Username = system.FirstNotEmpty(os.Getenv("WINGS_USERNAME"), "flame")
-		_config.System.User.Uid = system.MustInt(system.FirstNotEmpty(os.Getenv("WINGS_UID"), "988"))
-		_config.System.User.Gid = system.MustInt(system.FirstNotEmpty(os.Getenv("WINGS_GID"), "988"))
+		_config.System.Username = system.FirstNotEmpty(os.Getenv("flame_wings_USERNAME"), "flame")
+		_config.System.User.Uid = system.MustInt(system.FirstNotEmpty(os.Getenv("flame_wings_UID"), "988"))
+		_config.System.User.Gid = system.MustInt(system.FirstNotEmpty(os.Getenv("flame_wings_GID"), "988"))
 		return nil
 	}
 

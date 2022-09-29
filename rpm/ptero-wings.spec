@@ -5,7 +5,7 @@ Summary:    The server control plane for Flame Panel. Written from the ground-up
 BuildArch:  x86_64
 License:    MIT
 URL:        https://github.com/naysaku/flame-wings
-Source0:    https://github.com/naysaku/flame-wings/releases/download/v%{version}/wings_linux_amd64
+Source0:    https://github.com/naysaku/flame-wings/releases/download/v%{version}/flame_wings_linux_amd64
 
 %if 0%{?rhel} && 0%{?rhel} <= 8
 BuildRequires:  systemd
@@ -34,7 +34,7 @@ normally use to access the Panel.
 %install
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_unitdir}
-cp %{_sourcedir}/wings_linux_amd64 %{buildroot}%{_bindir}/wings
+cp %{_sourcedir}/flame_wings_linux_amd64 %{buildroot}%{_bindir}/wings
 
 cat > %{buildroot}%{_unitdir}/wings.service << EOF
 [Unit]
