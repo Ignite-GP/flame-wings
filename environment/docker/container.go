@@ -167,7 +167,7 @@ func (e *Environment) Create() error {
 
 	evs := e.Configuration.EnvironmentVariables()
 	for i, v := range evs {
-		// Convert 127.0.0.1 to the pterodactyl0 network interface if the environment is Docker
+		// Convert 127.0.0.1 to the flame0 network interface if the environment is Docker
 		// so that the server operates as expected.
 		if v == "SERVER_IP=127.0.0.1" {
 			evs[i] = "SERVER_IP=" + config.Get().Docker.Network.Interface
@@ -187,7 +187,7 @@ func (e *Environment) Create() error {
 		Image:        strings.TrimPrefix(e.meta.Image, "~"),
 		Env:          e.Configuration.EnvironmentVariables(),
 		Labels: map[string]string{
-			"Service":       "Pterodactyl",
+			"Service":       "Flame",
 			"ContainerType": "server_process",
 		},
 	}
@@ -287,7 +287,7 @@ func (e *Environment) Destroy() error {
 	// Don't trigger a destroy failure if we try to delete a container that does not
 	// exist on the system. We're just a step ahead of ourselves in that case.
 	//
-	// @see https://github.com/pterodactyl/panel/issues/2001
+	// @see https://github.com/flame/panel/issues/2001
 	if err != nil && client.IsErrNotFound(err) {
 		return nil
 	}

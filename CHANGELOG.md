@@ -14,7 +14,7 @@
 
 ### Added
 * Adds support for tracking of SFTP actions, power actions, server commands, and file uploads by utilizing a local SQLite database and processing events before sending them to the Panel.
-* Adds support for configuring the MTU on the `pterodactyl0` network.
+* Adds support for configuring the MTU on the `flame0` network.
 
 ## v1.6.4
 ### Fixed
@@ -36,7 +36,7 @@
 * CPU limit fields are only set on the Docker container if they have been specified for the server — otherwise they are left empty.
 
 ### Added
-* Added the ability to define the location of the temporary folder used by Wings — defaults to `/tmp/pterodactyl`.
+* Added the ability to define the location of the temporary folder used by Wings — defaults to `/tmp/flame`.
 * Adds the ability to authenticate for SFTP using public keys (requires `Panel@1.8.0`).
 
 ## v1.6.1
@@ -61,7 +61,7 @@
 ## v1.5.6
 ### Fixed
 * Rewrote handler logic for the power actions lock to hopefully address issues people have been having when a server crashes and they're unable to start it again until restarting Wings.
-* Fixes files uploaded with SFTP not being owned by the Pterodactyl user.
+* Fixes files uploaded with SFTP not being owned by the Flame user.
 * Fixes excessive memory usage when large lines are sent through the console event handler.
 
 ### Changed
@@ -409,7 +409,7 @@ along though, I've only included the differences between this version and the pr
 * Fixes some console output being written to the logs accidentally truncating other lines due to special ANSI sequences being output.
 * Fixes `server.properties` files getting mangled by the automatic configuration editor when booting a server.
 * Fixes a missed stream close when stopping resource polling that would lead to memory leaks.
-* Fixes port bindings being incorrectly re-assigned when using `127.0.0.1` with Docker. These are now properly re-mapped to the `pterodactyl0` interface so that networking operates as expected for the server.
+* Fixes port bindings being incorrectly re-assigned when using `127.0.0.1` with Docker. These are now properly re-mapped to the `flame0` interface so that networking operates as expected for the server.
 * Fixes handling of values within arrays in `yaml` and `json` configuration files.
 * Fixes a 304 error being returned rather than a 400 error when a file upload is invalid.
 * Fixes deadlocks and response delays when processing server console and stat events. This was causing server consoles to become completely unresponsive after random periods of time and was only resolvable via a Wings restart.
@@ -552,7 +552,7 @@ along though, I've only included the differences between this version and the pr
 
 ## v1.0.0-beta.5
 ### Fixed
-* Default config location settled on `/etc/pterodactyl/config.yml`; wings will now check all of the previous locations for the configuration and move it automatically to the new location.
+* Default config location settled on `/etc/flame/config.yml`; wings will now check all of the previous locations for the configuration and move it automatically to the new location.
 * Deleting a server no longer fails the process if the container cannot be found.
 * Fixes permissions checking for subusers connecting to the SFTP instance.
 * S3 backups now properly send back hash data to the panel.

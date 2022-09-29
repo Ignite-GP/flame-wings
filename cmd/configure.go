@@ -175,7 +175,7 @@ func getRequest() (*http.Request, error) {
 		return nil, err
 	}
 
-	r.Header.Set("Accept", "application/vnd.pterodactyl.v1+json")
+	r.Header.Set("Accept", "application/vnd.flame.v1+json")
 	r.Header.Set("Content-Type", "application/json")
 	r.Header.Set("Authorization", fmt.Sprintf("Bearer %s", configureArgs.Token))
 

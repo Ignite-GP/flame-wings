@@ -45,7 +45,7 @@ var (
 
 var rootCommand = &cobra.Command{
 	Use:   "wings",
-	Short: "Runs the API server allowing programmatic control of game servers for Pterodactyl Panel.",
+	Short: "Runs the API server allowing programmatic control of game servers for Flame Panel.",
 	PreRun: func(cmd *cobra.Command, args []string) {
 		initConfig()
 		initLogging()
@@ -107,12 +107,12 @@ func rootCmdRun(cmd *cobra.Command, _ []string) {
 	}
 	log.WithField("timezone", config.Get().System.Timezone).Info("configured wings with system timezone")
 	if err := config.ConfigureDirectories(); err != nil {
-		log.WithField("error", err).Fatal("failed to configure system directories for pterodactyl")
+		log.WithField("error", err).Fatal("failed to configure system directories for flame")
 		return
 	}
-	log.WithField("username", config.Get().System.User).Info("checking for pterodactyl system user")
-	if err := config.EnsurePterodactylUser(); err != nil {
-		log.WithField("error", err).Fatal("failed to create pterodactyl system user")
+	log.WithField("username", config.Get().System.User).Info("checking for flame system user")
+	if err := config.EnsureFlameUser(); err != nil {
+		log.WithField("error", err).Fatal("failed to create flame system user")
 	}
 	log.WithFields(log.Fields{
 		"username": config.Get().System.Username,
@@ -202,8 +202,8 @@ func rootCmdRun(cmd *cobra.Command, _ []string) {
 			// machine is rebooted. It is much better for us to just have a single failed
 			// server instance than an entire offline node.
 			//
-			// @see https://github.com/pterodactyl/panel/issues/2475
-			// @see https://github.com/pterodactyl/panel/issues/3358
+			// @see https://github.com/flame/panel/issues/2475
+			// @see https://github.com/flame/panel/issues/3358
 			ctx, cancel := context.WithTimeout(cmd.Context(), time.Second*30)
 			defer cancel()
 
@@ -423,7 +423,7 @@ func initLogging() {
 func printLogo() {
 	fmt.Printf(colorstring.Color(`
                      ____
-__ [blue][bold]Pterodactyl[reset] _____/___/_______ _______ ______
+__ [blue][bold]Flame[reset] _____/___/_______ _______ ______
 \_____\    \/\/    /   /       /  __   /   ___/
    \___\          /   /   /   /  /_/  /___   /
         \___/\___/___/___/___/___    /______/
@@ -431,7 +431,7 @@ __ [blue][bold]Pterodactyl[reset] _____/___/_______ _______ ______
 
 Copyright © 2018 - %d Dane Everitt & Contributors
 
-Website:  https://pterodactyl.io
+Website:  https://flame.io
  Source:  https://github.com/naysaku/flame-wings
 License:  https://github.com/naysaku/flame-wings/blob/develop/LICENSE
 
@@ -448,7 +448,7 @@ Wings was not able to locate your configuration file, and therefore is not
 able to complete its boot process. Please ensure you have copied your instance
 configuration file into the default location below.
 
-Default Location: /etc/pterodactyl/config.yml
+Default Location: /etc/flame/config.yml
 
 [yellow]This is not a bug with this software. Please do not make a bug report
 for this issue, it will be closed.[reset]

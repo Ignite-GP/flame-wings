@@ -139,7 +139,7 @@ func postServerArchive(c *gin.Context) {
 		// This function automatically adds the Source Node prefix and Timestamp to the log
 		// output before sending it over the websocket.
 		sendTransferLog := func(data string) {
-			output := colorstring.Color(fmt.Sprintf("[yellow][bold]%s [Pterodactyl Transfer System] [Source Node]:[default] %s", time.Now().Format(time.RFC1123), data))
+			output := colorstring.Color(fmt.Sprintf("[yellow][bold]%s [Flame Transfer System] [Source Node]:[default] %s", time.Now().Format(time.RFC1123), data))
 			s.Events().Publish(server.TransferLogsEvent, output)
 		}
 
@@ -345,7 +345,7 @@ func postTransfer(c *gin.Context) {
 		// This function automatically adds the Target Node prefix and Timestamp to the log output before sending it
 		// over the websocket.
 		sendTransferLog := func(data string) {
-			output := colorstring.Color(fmt.Sprintf("[yellow][bold]%s [Pterodactyl Transfer System] [Target Node]:[default] %s", time.Now().Format(time.RFC1123), data))
+			output := colorstring.Color(fmt.Sprintf("[yellow][bold]%s [Flame Transfer System] [Target Node]:[default] %s", time.Now().Format(time.RFC1123), data))
 			i.Server().Events().Publish(server.TransferLogsEvent, output)
 		}
 

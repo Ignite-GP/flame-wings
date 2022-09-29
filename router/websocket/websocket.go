@@ -307,7 +307,7 @@ func (h *Handler) HandleInbound(ctx context.Context, m Message) error {
 			// instead of authenticating for the first time.
 			if !newConnection {
 				// This prevents duplicate status messages as outlined in
-				// https://github.com/pterodactyl/panel/issues/2077
+				// https://github.com/flame/panel/issues/2077
 				return nil
 			}
 

@@ -25,7 +25,7 @@ import (
 	"github.com/naysaku/flame-wings/system"
 )
 
-const DefaultLocation = "/etc/pterodactyl/config.yml"
+const DefaultLocation = "/etc/flame/config.yml"
 
 // DefaultTLSConfig sets sane defaults to use when configuring the internal
 // webserver to listen for public connections.
@@ -117,11 +117,11 @@ type RemoteQueryConfiguration struct {
 
 // SystemConfiguration defines basic system configuration settings.
 type SystemConfiguration struct {
-	// The root directory where all of the pterodactyl data is stored at.
+	// The root directory where all of the flame data is stored at.
 	RootDirectory string `default:"/var/lib/flame" yaml:"root_directory"`
 
 	// Directory where logs for server installations and other wings events are logged.
-	LogDirectory string `default:"/var/log/pterodactyl" yaml:"log_directory"`
+	LogDirectory string `default:"/var/log/flame" yaml:"log_directory"`
 
 	// Directory where the server data is stored at.
 	Data string `default:"/var/lib/flame/volumes" yaml:"data"`
@@ -132,12 +132,12 @@ type SystemConfiguration struct {
 	// Directory where local backups will be stored on the machine.
 	BackupDirectory string `default:"/var/lib/flame/backups" yaml:"backup_directory"`
 
-	// TmpDirectory specifies where temporary files for Pterodactyl installation processes
+	// TmpDirectory specifies where temporary files for Flame installation processes
 	// should be created. This supports environments running docker-in-docker.
-	TmpDirectory string `default:"/tmp/pterodactyl" yaml:"tmp_directory"`
+	TmpDirectory string `default:"/tmp/flame" yaml:"tmp_directory"`
 
 	// The user that should own all of the server files, and be used for containers.
-	Username string `default:"pterodactyl" yaml:"username"`
+	Username string `default:"flame" yaml:"username"`
 
 	// The timezone for this Wings instance. This is detected by Wings automatically if possible,
 	// and falls back to UTC if not able to be detected. If you need to set this manually, that
@@ -262,7 +262,7 @@ type Configuration struct {
 	// if the debug flag is passed through the command line arguments.
 	Debug bool
 
-	AppName string `default:"Pterodactyl" json:"app_name" yaml:"app_name"`
+	AppName string `default:"Flame" json:"app_name" yaml:"app_name"`
 
 	// A unique identifier for this node in the Panel.
 	Uuid string
@@ -401,14 +401,14 @@ func WriteToDisk(c *Configuration) error {
 	return nil
 }
 
-// EnsurePterodactylUser ensures that the Pterodactyl core user exists on the
+// EnsureFlameUser ensures that the Flame core user exists on the
 // system. This user will be the owner of all data in the root data directory
 // and is used as the user within containers. If files are not owned by this
 // user there will be issues with permissions on Docker mount points.
 //
 // This function IS NOT thread safe and should only be called in the main thread
 // when the application is booting.
-func EnsurePterodactylUser() error {
+func EnsureFlameUser() error {
 	sysName, err := getSystemName()
 	if err != nil {
 		return err
@@ -416,7 +416,7 @@ func EnsurePterodactylUser() error {
 
 	// Our way of detecting if wings is running inside of Docker.
 	if sysName == "distroless" {
-		_config.System.Username = system.FirstNotEmpty(os.Getenv("WINGS_USERNAME"), "pterodactyl")
+		_config.System.Username = system.FirstNotEmpty(os.Getenv("WINGS_USERNAME"), "flame")
 		_config.System.User.Uid = system.MustInt(system.FirstNotEmpty(os.Getenv("WINGS_UID"), "988"))
 		_config.System.User.Gid = system.MustInt(system.FirstNotEmpty(os.Getenv("WINGS_GID"), "988"))
 		return nil

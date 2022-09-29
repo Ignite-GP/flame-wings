@@ -25,7 +25,7 @@ func NewFs() (*Filesystem, *rootFs) {
 		},
 	})
 
-	tmpDir, err := os.MkdirTemp(os.TempDir(), "pterodactyl")
+	tmpDir, err := os.MkdirTemp(os.TempDir(), "flame")
 	if err != nil {
 		panic(err)
 	}
