@@ -3,7 +3,7 @@ package router
 import (
 	"bufio"
 	"context"
-	"github.com/pterodactyl/wings/internal/models"
+	"github.com/naysaku/flame-wings/internal/models"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -14,18 +14,18 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/pterodactyl/wings/config"
+	"github.com/naysaku/flame-wings/config"
 
 	"emperror.dev/errors"
 	"github.com/apex/log"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/pterodactyl/wings/router/downloader"
-	"github.com/pterodactyl/wings/router/middleware"
-	"github.com/pterodactyl/wings/router/tokens"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/server/filesystem"
+	"github.com/naysaku/flame-wings/router/downloader"
+	"github.com/naysaku/flame-wings/router/middleware"
+	"github.com/naysaku/flame-wings/router/tokens"
+	"github.com/naysaku/flame-wings/server"
+	"github.com/naysaku/flame-wings/server/filesystem"
 )
 
 // getServerFileContents returns the contents of a file on the server.

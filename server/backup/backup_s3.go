@@ -14,12 +14,12 @@ import (
 	"emperror.dev/errors"
 	"github.com/cenkalti/backoff/v4"
 
-	"github.com/pterodactyl/wings/server/filesystem"
+	"github.com/naysaku/flame-wings/server/filesystem"
 
 	"github.com/juju/ratelimit"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/remote"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/remote"
 )
 
 type S3Backup struct {

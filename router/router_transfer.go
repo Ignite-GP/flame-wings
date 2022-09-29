@@ -23,14 +23,14 @@ import (
 	"github.com/mholt/archiver/v3"
 	"github.com/mitchellh/colorstring"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/installer"
-	"github.com/pterodactyl/wings/remote"
-	"github.com/pterodactyl/wings/router/middleware"
-	"github.com/pterodactyl/wings/router/tokens"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/server/filesystem"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/installer"
+	"github.com/naysaku/flame-wings/remote"
+	"github.com/naysaku/flame-wings/router/middleware"
+	"github.com/naysaku/flame-wings/router/tokens"
+	"github.com/naysaku/flame-wings/server"
+	"github.com/naysaku/flame-wings/server/filesystem"
+	"github.com/naysaku/flame-wings/system"
 )
 
 // Number of ticks in the progress bar

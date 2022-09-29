@@ -9,10 +9,10 @@ import (
 	"emperror.dev/errors"
 	"github.com/apex/log"
 	"github.com/gin-gonic/gin"
-	"github.com/pterodactyl/wings/router/downloader"
-	"github.com/pterodactyl/wings/router/middleware"
-	"github.com/pterodactyl/wings/router/tokens"
-	"github.com/pterodactyl/wings/server"
+	"github.com/naysaku/flame-wings/router/downloader"
+	"github.com/naysaku/flame-wings/router/middleware"
+	"github.com/naysaku/flame-wings/router/tokens"
+	"github.com/naysaku/flame-wings/server"
 )
 
 // Returns a single server from the collection of servers.

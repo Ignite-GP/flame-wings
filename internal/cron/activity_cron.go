@@ -3,10 +3,10 @@ package cron
 import (
 	"context"
 	"emperror.dev/errors"
-	"github.com/pterodactyl/wings/internal/database"
-	"github.com/pterodactyl/wings/internal/models"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/internal/database"
+	"github.com/naysaku/flame-wings/internal/models"
+	"github.com/naysaku/flame-wings/server"
+	"github.com/naysaku/flame-wings/system"
 )
 
 type activityCron struct {

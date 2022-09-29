@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/pterodactyl/wings/internal/models"
+	"github.com/naysaku/flame-wings/internal/models"
 	"io"
 	"net/http"
 	"strconv"
@@ -16,7 +16,7 @@ import (
 	"github.com/cenkalti/backoff/v4"
 	"github.com/goccy/go-json"
 
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/system"
 )
 
 type Client interface {

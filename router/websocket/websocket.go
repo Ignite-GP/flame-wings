@@ -3,7 +3,7 @@ package websocket
 import (
 	"context"
 	"fmt"
-	"github.com/pterodactyl/wings/internal/models"
+	"github.com/naysaku/flame-wings/internal/models"
 	"net/http"
 	"strings"
 	"sync"
@@ -15,13 +15,13 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/google/uuid"
 	"github.com/gorilla/websocket"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/system"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/environment/docker"
-	"github.com/pterodactyl/wings/router/tokens"
-	"github.com/pterodactyl/wings/server"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/environment"
+	"github.com/naysaku/flame-wings/environment/docker"
+	"github.com/naysaku/flame-wings/router/tokens"
+	"github.com/naysaku/flame-wings/server"
 )
 
 const (

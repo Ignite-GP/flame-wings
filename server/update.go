@@ -3,9 +3,9 @@ package server
 import (
 	"time"
 
-	"github.com/pterodactyl/wings/environment/docker"
+	"github.com/naysaku/flame-wings/environment/docker"
 
-	"github.com/pterodactyl/wings/environment"
+	"github.com/naysaku/flame-wings/environment"
 )
 
 // SyncWithEnvironment updates the environment for the server to match any of

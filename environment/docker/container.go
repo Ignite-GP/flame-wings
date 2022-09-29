@@ -18,9 +18,9 @@ import (
 	"github.com/docker/docker/client"
 	"github.com/docker/docker/daemon/logger/local"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/environment"
+	"github.com/naysaku/flame-wings/system"
 )
 
 var ErrNotAttached = errors.Sentinel("not attached to instance")

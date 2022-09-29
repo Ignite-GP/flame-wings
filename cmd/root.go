@@ -5,8 +5,8 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
-	"github.com/pterodactyl/wings/internal/cron"
-	"github.com/pterodactyl/wings/internal/database"
+	"github.com/naysaku/flame-wings/internal/cron"
+	"github.com/naysaku/flame-wings/internal/database"
 	log2 "log"
 	"net/http"
 	_ "net/http/pprof"
@@ -28,14 +28,14 @@ import (
 	"golang.org/x/crypto/acme"
 	"golang.org/x/crypto/acme/autocert"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/loggers/cli"
-	"github.com/pterodactyl/wings/remote"
-	"github.com/pterodactyl/wings/router"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/sftp"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/environment"
+	"github.com/naysaku/flame-wings/loggers/cli"
+	"github.com/naysaku/flame-wings/remote"
+	"github.com/naysaku/flame-wings/router"
+	"github.com/naysaku/flame-wings/server"
+	"github.com/naysaku/flame-wings/sftp"
+	"github.com/naysaku/flame-wings/system"
 )
 
 var (
@@ -432,8 +432,8 @@ __ [blue][bold]Pterodactyl[reset] _____/___/_______ _______ ______
 Copyright © 2018 - %d Dane Everitt & Contributors
 
 Website:  https://pterodactyl.io
- Source:  https://github.com/pterodactyl/wings
-License:  https://github.com/pterodactyl/wings/blob/develop/LICENSE
+ Source:  https://github.com/naysaku/flame-wings
+License:  https://github.com/naysaku/flame-wings/blob/develop/LICENSE
 
 This software is made available under the terms of the MIT license.
 The above copyright notice and this permission notice shall be included

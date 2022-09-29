@@ -3,9 +3,9 @@ package database
 import (
 	"emperror.dev/errors"
 	"github.com/glebarez/sqlite"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/internal/models"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/internal/models"
+	"github.com/naysaku/flame-wings/system"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"path/filepath"

@@ -1,4 +1,4 @@
-module github.com/pterodactyl/wings
+module github.com/naysaku/flame-wings
 
 go 1.17
 

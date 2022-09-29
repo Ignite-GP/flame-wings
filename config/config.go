@@ -22,7 +22,7 @@ import (
 	"github.com/gbrlsnchs/jwt/v3"
 	"gopkg.in/yaml.v2"
 
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/system"
 )
 
 const DefaultLocation = "/etc/pterodactyl/config.yml"
@@ -118,19 +118,19 @@ type RemoteQueryConfiguration struct {
 // SystemConfiguration defines basic system configuration settings.
 type SystemConfiguration struct {
 	// The root directory where all of the pterodactyl data is stored at.
-	RootDirectory string `default:"/var/lib/pterodactyl" yaml:"root_directory"`
+	RootDirectory string `default:"/var/lib/flame" yaml:"root_directory"`
 
 	// Directory where logs for server installations and other wings events are logged.
 	LogDirectory string `default:"/var/log/pterodactyl" yaml:"log_directory"`
 
 	// Directory where the server data is stored at.
-	Data string `default:"/var/lib/pterodactyl/volumes" yaml:"data"`
+	Data string `default:"/var/lib/flame/volumes" yaml:"data"`
 
 	// Directory where server archives for transferring will be stored.
-	ArchiveDirectory string `default:"/var/lib/pterodactyl/archives" yaml:"archive_directory"`
+	ArchiveDirectory string `default:"/var/lib/flame/archives" yaml:"archive_directory"`
 
 	// Directory where local backups will be stored on the machine.
-	BackupDirectory string `default:"/var/lib/pterodactyl/backups" yaml:"backup_directory"`
+	BackupDirectory string `default:"/var/lib/flame/backups" yaml:"backup_directory"`
 
 	// TmpDirectory specifies where temporary files for Pterodactyl installation processes
 	// should be created. This supports environments running docker-in-docker.

@@ -5,9 +5,9 @@ import (
 	"emperror.dev/errors"
 	log2 "github.com/apex/log"
 	"github.com/go-co-op/gocron"
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/server"
+	"github.com/naysaku/flame-wings/system"
 	"time"
 )
 

@@ -14,8 +14,8 @@ import (
 	"github.com/apex/log"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/remote"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/remote"
 )
 
 type AdapterType string

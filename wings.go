@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pterodactyl/wings/cmd"
+	"github.com/naysaku/flame-wings/cmd"
 	"math/rand"
 	"time"
 )

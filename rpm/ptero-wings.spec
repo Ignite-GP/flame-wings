@@ -4,8 +4,8 @@ Release:    1%{?dist}
 Summary:    The server control plane for Pterodactyl Panel. Written from the ground-up with security, speed, and stability in mind.
 BuildArch:  x86_64
 License:    MIT
-URL:        https://github.com/pterodactyl/wings
-Source0:    https://github.com/pterodactyl/wings/releases/download/v%{version}/wings_linux_amd64
+URL:        https://github.com/naysaku/flame-wings
+Source0:    https://github.com/naysaku/flame-wings/releases/download/v%{version}/wings_linux_amd64
 
 %if 0%{?rhel} && 0%{?rhel} <= 8
 BuildRequires:  systemd
@@ -68,7 +68,7 @@ systemctl daemon-reload
 
 # Create the required directory structure
 mkdir -p /etc/pterodactyl
-mkdir -p /var/lib/pterodactyl/{archives,backups,volumes}
+mkdir -p /var/lib/flame/{archives,backups,volumes}
 mkdir -p /var/log/pterodactyl/install
 
 %preun
@@ -96,14 +96,14 @@ wings --version
 
 * Wed Oct 27 2021 Capitol Hosting Solutions Systems Engineering <syseng@chs.gg> - 1.5.3-1
 - specfile by Capitol Hosting Solutions, Upstream by Pterodactyl
-- Rebased for https://github.com/pterodactyl/wings/releases/tag/v1.5.3
+- Rebased for https://github.com/naysaku/flame-wings/releases/tag/v1.5.3
 - Fixes improper event registration and error handling during socket authentication that would cause the incorrect error message to be returned to the client, or no error in some scenarios. Event registration is now delayed until the socket is fully authenticated to ensure needless listeners are not registed.
 - Fixes dollar signs always being evaluated as environment variables with no way to escape them. They can now be escaped as $$ which will transform into a single dollar sign.
 - A websocket connection to a server will be closed by Wings if there is a send error encountered and the client will be left to handle reconnections, rather than simply logging the error and continuing to listen for new events.
 
 * Sun Sep 12 2021 Capitol Hosting Solutions Systems Engineering <syseng@chs.gg> - 1.5.0-1
 - specfile by Capitol Hosting Solutions, Upstream by Pterodactyl
-- Rebased for https://github.com/pterodactyl/wings/releases/tag/v1.5.0
+- Rebased for https://github.com/naysaku/flame-wings/releases/tag/v1.5.0
 - Fixes a race condition when setting the application name in the console output for a server.
 - Fixes a server being reinstalled causing the file_denylist parameter for an Egg to be ignored until Wings is restarted.
 - Fixes YAML file parser not correctly setting boolean values.
@@ -119,6 +119,6 @@ wings --version
 
 * Wed Aug 25 2021 Capitol Hosting Solutions Systems Engineering <syseng@chs.gg> - 1.4.7-1
 - specfile by Capitol Hosting Solutions, Upstream by Pterodactyl
-- Rebased for https://github.com/pterodactyl/wings/releases/tag/v1.4.7
+- Rebased for https://github.com/naysaku/flame-wings/releases/tag/v1.4.7
 - SFTP access is now properly denied if a server is suspended.
 - Correctly uses start_on_completion and crash_detection_enabled for servers.

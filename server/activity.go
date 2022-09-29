@@ -3,8 +3,8 @@ package server
 import (
 	"context"
 	"emperror.dev/errors"
-	"github.com/pterodactyl/wings/internal/database"
-	"github.com/pterodactyl/wings/internal/models"
+	"github.com/naysaku/flame-wings/internal/database"
+	"github.com/naysaku/flame-wings/internal/models"
 	"time"
 )
 

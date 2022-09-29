@@ -13,9 +13,9 @@ import (
 	"github.com/pkg/sftp"
 	"golang.org/x/crypto/ssh"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/server"
-	"github.com/pterodactyl/wings/server/filesystem"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/server"
+	"github.com/naysaku/flame-wings/server/filesystem"
 )
 
 const (

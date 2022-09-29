@@ -22,10 +22,10 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/spf13/cobra"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
-	"github.com/pterodactyl/wings/loggers/cli"
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/environment"
+	"github.com/naysaku/flame-wings/loggers/cli"
+	"github.com/naysaku/flame-wings/system"
 )
 
 const (
@@ -166,7 +166,7 @@ func diagnosticsCmdRun(cmd *cobra.Command, args []string) {
 
 	printHeader(output, "Latest Wings Logs")
 	if diagnosticsArgs.IncludeLogs {
-		p := "/var/log/pterodactyl/wings.log"
+		p := "/var/log/naysaku/flame-wings.log"
 		if cfg != nil {
 			p = path.Join(cfg.System.LogDirectory, "wings.log")
 		}

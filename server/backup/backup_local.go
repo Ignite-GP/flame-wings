@@ -8,8 +8,8 @@ import (
 	"emperror.dev/errors"
 	"github.com/mholt/archiver/v3"
 
-	"github.com/pterodactyl/wings/remote"
-	"github.com/pterodactyl/wings/server/filesystem"
+	"github.com/naysaku/flame-wings/remote"
+	"github.com/naysaku/flame-wings/server/filesystem"
 )
 
 type LocalBackup struct {

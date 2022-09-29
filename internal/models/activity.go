@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/pterodactyl/wings/system"
+	"github.com/naysaku/flame-wings/system"
 	"gorm.io/gorm"
 	"time"
 )

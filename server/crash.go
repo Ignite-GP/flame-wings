@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pterodactyl/wings/config"
-	"github.com/pterodactyl/wings/environment"
+	"github.com/naysaku/flame-wings/config"
+	"github.com/naysaku/flame-wings/environment"
 )
 
 type CrashHandler struct {
